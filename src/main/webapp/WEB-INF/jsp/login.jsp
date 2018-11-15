@@ -44,7 +44,7 @@
     </div>
 
 
-    <div style="float:left">
+    <%--<div style="float:left">
     <h2>Formularz rejestracji nowego uzytkownika:</h2>
 
 
@@ -67,7 +67,7 @@
             </tr>
         </table>
     </form:form>
-    </div>
+    </div>--%>
 
 </div>
 

@@ -1,42 +1,68 @@
 package com.mpikula.sklep.entities;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "user")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
     private String login;
+
     private String password;
 
-    private String registerLogin;
-    private String registerPassword;
-    private String registerRepeatPassword;
+    @Column(name = "repeat_password")
+    private String repeatPassword;
 
     private String name;
-    private String surName;
+
+    private String surname;
+
     private String city;
+
+    @Column(name = "post_code")
     private String postCode;
+
     private String street;
-    private int streetNumber;
+
+    @Column(name = "house_number")
     private int houseNumber;
+
+    @Column(name = "flat_number")
+    private int flatNumber;
+
+    @Column(name = "phone_number")
     private String phone;
 
     public User() {}
 
-    public User(String login, String password, String registerLogin,
-                String registerPassword, String registerRepeatPassword, String name,
+    public User(int id, String login, String password, String repeatPassword, String name,
                 String surName, String city, String postCode, String street,
-                int streetNumber, int houseNumber, String phone) {
+                int houseNumber, int flatNumber, String phone) {
+        this.id = id;
         this.login = login;
         this.password = password;
-        this.registerLogin = registerLogin;
-        this.registerPassword = registerPassword;
-        this.registerRepeatPassword = registerRepeatPassword;
+        this.repeatPassword = repeatPassword;
+
         this.name = name;
-        this.surName = surName;
+        this.surname = surName;
         this.city = city;
         this.postCode = postCode;
         this.street = street;
-        this.streetNumber = streetNumber;
         this.houseNumber = houseNumber;
+        this.flatNumber = flatNumber;
         this.phone = phone;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getLogin() {
@@ -55,28 +81,12 @@ public class User {
         this.password = password;
     }
 
-    public String getRegisterLogin() {
-        return registerLogin;
+    public String getRepeatPassword() {
+        return repeatPassword;
     }
 
-    public void setRegisterLogin(String registerLogin) {
-        this.registerLogin = registerLogin;
-    }
-
-    public String getRegisterPassword() {
-        return registerPassword;
-    }
-
-    public void setRegisterPassword(String registerPassword) {
-        this.registerPassword = registerPassword;
-    }
-
-    public String getRegisterRepeatPassword() {
-        return registerRepeatPassword;
-    }
-
-    public void setRegisterRepeatPassword(String registerRepeatPassword) {
-        this.registerRepeatPassword = registerRepeatPassword;
+    public void setRepeatPassword(String repeatPassword) {
+        this.repeatPassword = repeatPassword;
     }
 
     public String getName() {
@@ -87,12 +97,12 @@ public class User {
         this.name = name;
     }
 
-    public String getSurName() {
-        return surName;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setSurName(String surName) {
-        this.surName = surName;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getCity() {
@@ -119,12 +129,12 @@ public class User {
         this.street = street;
     }
 
-    public int getStreetNumber() {
-        return streetNumber;
+    public int getFlatNumberNumber() {
+        return flatNumber;
     }
 
-    public void setStreetNumber(int streetNumber) {
-        this.streetNumber = streetNumber;
+    public void setFlatNumberNumber(int flatNumberNumber) {
+        this.flatNumber = flatNumber;
     }
 
     public int getHouseNumber() {
