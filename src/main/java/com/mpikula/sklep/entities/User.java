@@ -1,22 +1,13 @@
 package com.mpikula.sklep.entities;
 
 public class User {
-    public User(String login, String password, String name, String surName, String city,
-                String postCode, String street, int streetNumber, int houseNumber, String phone) {
-        this.login = login;
-        this.password = password;
-        this.name = name;
-        this.surName = surName;
-        this.city = city;
-        this.postCode = postCode;
-        this.street = street;
-        this.streetNumber = streetNumber;
-        this.houseNumber = houseNumber;
-        this.phone = phone;
-    }
 
     private String login;
     private String password;
+
+    private String registerLogin;
+    private String registerPassword;
+    private String registerRepeatPassword;
 
     private String name;
     private String surName;
@@ -28,6 +19,25 @@ public class User {
     private String phone;
 
     public User() {}
+
+    public User(String login, String password, String registerLogin,
+                String registerPassword, String registerRepeatPassword, String name,
+                String surName, String city, String postCode, String street,
+                int streetNumber, int houseNumber, String phone) {
+        this.login = login;
+        this.password = password;
+        this.registerLogin = registerLogin;
+        this.registerPassword = registerPassword;
+        this.registerRepeatPassword = registerRepeatPassword;
+        this.name = name;
+        this.surName = surName;
+        this.city = city;
+        this.postCode = postCode;
+        this.street = street;
+        this.streetNumber = streetNumber;
+        this.houseNumber = houseNumber;
+        this.phone = phone;
+    }
 
     public String getLogin() {
         return login;
@@ -43,6 +53,30 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRegisterLogin() {
+        return registerLogin;
+    }
+
+    public void setRegisterLogin(String registerLogin) {
+        this.registerLogin = registerLogin;
+    }
+
+    public String getRegisterPassword() {
+        return registerPassword;
+    }
+
+    public void setRegisterPassword(String registerPassword) {
+        this.registerPassword = registerPassword;
+    }
+
+    public String getRegisterRepeatPassword() {
+        return registerRepeatPassword;
+    }
+
+    public void setRegisterRepeatPassword(String registerRepeatPassword) {
+        this.registerRepeatPassword = registerRepeatPassword;
     }
 
     public String getName() {

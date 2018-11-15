@@ -22,6 +22,10 @@
 
 <div class="container">
 
+    <div style="float: left;">
+    <h1>Formularz logowania uzytkownika:</h1>
+
+
     <form:form id="loginForm" modelAttribute="user" action="loginUser" method="post">
         <table>
             <tr>
@@ -37,6 +41,33 @@
             </tr>
         </table>
     </form:form>
+    </div>
+
+
+    <div style="float:left">
+    <h2>Formularz rejestracji nowego uzytkownika:</h2>
+
+
+    <form:form id="registerForm" modelAttribute="user" action="registerUser" method="post">
+        <table>
+            <tr>
+                <td><form:label path="registerLogin">Login:</form:label></td>
+                <td><form:input path="registerLogin"/></td>
+            </tr>
+            <tr>
+                <td><form:label path="registerPassword">Haslo:</form:label></td>
+                <td><form:input path="registerPassword"/></td>
+            </tr>
+            <tr>
+                <td><form:label path="registerRepeatPassword">Powtorz haslo:</form:label></td>
+                <td><form:input path="registerRepeatPassword"/></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Zarejestruj sie"/></td>
+            </tr>
+        </table>
+    </form:form>
+    </div>
 
 </div>
 

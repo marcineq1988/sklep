@@ -41,8 +41,14 @@
 </aside>
 <section class="container">
 
-    <h1>${login}, zalogowales sie - tu bedzie zawartosc konta uzytkownika!</h1>
-    <h2>Twoje haslo to: ${password}</h2>
+        <c:if test="${registrationSuccess==true}">
+            <h1> Rejestracja zakonczona powodzeniem!</h1>
+
+        </c:if>
+
+
+    <h2>${login}, zalogowales sie - tu bedzie zawartosc konta uzytkownika!</h2>
+    <h3>Twoje haslo to: ${password}</h3>
 
 
 <%--

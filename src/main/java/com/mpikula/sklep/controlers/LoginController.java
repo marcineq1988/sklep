@@ -18,4 +18,17 @@ public class LoginController {
 
         return "userAccount";
     }
+
+    @PostMapping("registerUser")
+    public String registerUserAndLoginToUserAccount(@RequestParam("registerLogin") String login,
+                                     @RequestParam("registerPassword") String password, Model model) {
+
+        model.addAttribute("registrationSuccess", true);
+        model.addAttribute("login", login);
+        model.addAttribute("password", password);
+
+        return "userAccount";
+    }
+
+
 }
