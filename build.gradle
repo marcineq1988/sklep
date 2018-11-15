@@ -1,0 +1,41 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.5.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.mpikula'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile group: 'jstl', name: 'jstl', version: '1.2'
+
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-devtools')
+	compile('javax.servlet:jstl')
+	compile group: 'taglibs', name: 'standard', version: '1.1.2'
+	compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+
+	compile 'org.springframework.boot:spring-boot-starter-web:1.5.8.RELEASE'
+	compile 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.1'
+	compile 'javax.servlet:jstl:1.2'
+}
